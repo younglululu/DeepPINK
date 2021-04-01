@@ -35,6 +35,21 @@ bias = True;
 activation='relu';
 iterNum = 10;
 
+def calc_selectedfeat(origin_vec, knockoff_vec, q_thres):
+    W = np.fabs(origin_vec)-np.fabs(knockoff_vec); print(W.shape)
+	t = np.concatenate(([0],np.sort(np.fabs(W))));
+	ratio = np.zeros(origin_vec);
+	for j in range(origin_vec): ratio[j] = 1.0*len(np.where(W <= -t[j])[0]) / np.max((1, len(np.where(W >= t[j])[0]) ))
+    
+    T = np.inf;
+    arr = np.where(ratio <= q_thres)[0];
+    if len(arr) > 0:
+        id = np.min(arr);
+        T = t[id];
+    
+    qualifiedIndices = np.where(np.fabs(W) >= T)[0];
+    return qualifiedIndices;
+    
 
 def show_layer_info(layer_name, layer_out):
     # print('[layer]: %s\t[shape]: %s \n' % (layer_name,str(layer_out.get_shape().as_list())))
