@@ -6,4 +6,6 @@ https://drive.google.com/file/d/1THhrMioEfZNU5-ExInXmKUNDNa3fQEcd/view?usp=shari
 
 Note that there are multiple ways to generate knockoffs, such as using deep neural networks (https://web.stanford.edu/group/candes/deep-knockoffs/).
 
-(2) a sample code of DeepPINK. The input is n x 2p matrix and n x 1 labels/responses. The output contains n x 1 feature importance, n x 1 feature knockoff statistics, and the set of features selected subjected to specified FDR threshold.
+(2) A sample code of DeepPINK. The input is n x 2p matrix and n x 1 labels/responses. The output contains n x 1 feature importance, n x 1 feature knockoff statistics, and the set of features selected subjected to specified FDR threshold.
+
+(3) All datasets (https://noble.gs.washington.edu/proj/DeepPINK/)
