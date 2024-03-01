@@ -1,8 +1,12 @@
 # DeepPINK
-DeepPINK: reproducible feature selection in deep neural networks (https://papers.nips.cc/paper/8085-deeppink-reproducible-feature-selection-in-deep-neural-networks.pdf)
 
-(1) Software to generate knockoffs. The input should be a n x p matrix (n is the size of samples and p is the dimension of features), better standardized. And the output is a n x 2p matrix, the first p dimension for original features and next p dimension for knockoff features. Note that there are multiple ways to generate knockoffs, such as using deep neural networks (https://web.stanford.edu/group/candes/deep-knockoffs/).
+Yang Lu, Yingying Fan, Jinchi Lv, William Stafford Noble.  ["DeepPINK: reproducible feature selection in deep neural networks"] (https://papers.nips.cc/paper/8085-deeppink-reproducible-feature-selection-in-deep-neural-networks)
+_Advances in Neural Information Processing Systems 31_ (NeurIPS), 2018.
 
-(2) A sample code of DeepPINK. The input is n x 2p matrix and n x 1 labels/responses. The output contains n x 1 feature importance, n x 1 feature knockoff statistics, and the set of features selected subjected to specified FDR threshold.
+This repository contains a Python implementation of DeepPINK.
+The input is an n x 2p matrix and n x 1 labels. The output contains n x 1 feature importance values, n x 1 feature knockoff statistics, and the set of features selected subjected to the specified FDR threshold.
 
-(3) All datasets (https://noble.gs.washington.edu/proj/DeepPINK/)
+To use DeepPINK, you must first generate knockoffs.
+Note that there are multiple ways to generate such knockoffs, such as using [deep neural networks](https://web.stanford.edu/group/candes/deep-knockoffs).
+
+All datasets used in the DeepPINK paper are available at (https://noble.gs.washington.edu/proj/DeepPINK).
